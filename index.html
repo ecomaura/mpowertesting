@@ -183,8 +183,38 @@
   .about-card{background:var(--navy);color:var(--white);padding:38px 34px;}
   .about-card .num{font-family:'Playfair Display',serif;font-size:44px;color:var(--gold);line-height:1;margin-bottom:6px;}
   .about-card .lbl{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#AFBBDD;margin-bottom:26px;display:block;}
-  .about-card ul li{padding:10px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px;color:#D6DEF2;}
-  .about-card ul li:first-child{border-top:none;}
+  .about-card ul li{
+  padding:16px 0;
+  border-top:1px solid rgba(255,255,255,.14);
+  font-size:14.5px;
+  color:#D6DEF2;
+  position:relative;
+  padding-left:28px;
+}
+
+.about-card ul li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:22px;
+  width:8px;
+  height:8px;
+  background:var(--gold);
+}
+
+.about-card ul li::after{
+  content:"";
+  position:absolute;
+  left:3px;
+  top:34px;
+  width:2px;
+  height:18px;
+  background:rgba(255,255,255,.3);
+}
+
+.about-card ul li:last-child::after{
+  display:none;
+}
   .about-body h2{font-size:30px;}
   .about-body p{color:#3E4762;font-size:16px;}
   .about-features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px;}
