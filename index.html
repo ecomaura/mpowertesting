@@ -183,37 +183,26 @@
   .about-card{background:var(--navy);color:var(--white);padding:38px 34px;}
   .about-card .num{font-family:'Playfair Display',serif;font-size:44px;color:var(--gold);line-height:1;margin-bottom:6px;}
   .about-card .lbl{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#AFBBDD;margin-bottom:26px;display:block;}
-  .about-card ul li{
-  padding:16px 0;
-  border-top:1px solid rgba(255,255,255,.14);
-  font-size:14.5px;
-  color:#D6DEF2;
-  position:relative;
-  padding-left:28px;
+.about-card .flow-steps{list-style:none;margin:0;padding:0;}
+.about-card .flow-steps li{
+  display:flex;align-items:flex-start;gap:16px;
+  position:relative;padding:0 0 32px;
 }
-
-.about-card ul li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:22px;
-  width:8px;
-  height:8px;
-  background:var(--gold);
+.about-card .flow-steps li:last-child{padding-bottom:0;}
+.about-card .flow-steps li::after{
+  content:"";position:absolute;left:15px;top:34px;bottom:2px;width:2px;
+  background:rgba(255,255,255,.25);
 }
-
-.about-card ul li::after{
-  content:"";
-  position:absolute;
-  left:3px;
-  top:34px;
-  width:2px;
-  height:18px;
-  background:rgba(255,255,255,.3);
+.about-card .flow-steps li:last-child::after{display:none;}
+.about-card .flow-num{
+  flex:none;width:32px;height:32px;border-radius:50%;
+  background:var(--gold);color:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;font-family:'Inter',sans-serif;
+  position:relative;z-index:1;
 }
-
-.about-card ul li:last-child::after{
-  display:none;
+.about-card .flow-text{
+  padding-top:6px;font-size:14.5px;color:#D6DEF2;
 }
   .about-body h2{font-size:30px;}
   .about-body p{color:#3E4762;font-size:16px;}
@@ -461,13 +450,22 @@
 <section id="about" class="about">
   <div class="wrap grid">
     <div class="about-card">
-      <span class="lbl">How We Work</span>
-      <ul>
-        <li>Dispatch across Germany &amp; the EU</li>
-        <li>Direct technical contact, no call centre</li>
-        <li>Documentation supplied per order</li>
-      </ul>
-    </div>
+  <span class="lbl">How We Work</span>
+  <ol class="flow-steps">
+    <li>
+      <span class="flow-num">01</span>
+      <span class="flow-text">Dispatch across Germany &amp; the EU</span>
+    </li>
+    <li>
+      <span class="flow-num">02</span>
+      <span class="flow-text">Direct technical contact, no call centre</span>
+    </li>
+    <li>
+      <span class="flow-num">03</span>
+      <span class="flow-text">Documentation supplied per order</span>
+    </li>
+  </ol>
+</div>
     <div class="about-body">
       <span class="eyebrow">About Us</span>
       <h2>A Bavarian supplier of fixing systems for construction and industry</h2>
