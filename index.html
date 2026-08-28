@@ -181,55 +181,44 @@
   .intro-art img{width:100%;height:420px;object-fit:contain;background:var(--mist);}
   .intro-art-cap{display:block;text-align:center;margin-top:14px;font-size:12.5px;color:#8792AC;text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
 
-  /* About */
-.about .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;}
+ /* About */
+.about .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start;}
 
 .about-card{
   background:var(--navy);color:var(--white);
-  padding:44px 38px;
-  display:flex;
-  flex-direction:column;
+  padding:36px 32px;
 }
 .about-card .num{font-family:'Playfair Display',serif;font-size:44px;color:var(--gold);line-height:1;margin-bottom:6px;}
-.about-card .lbl{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#AFBBDD;margin-bottom:26px;display:block;}
+.about-card .lbl{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#AFBBDD;margin-bottom:24px;display:block;}
 
 .about-card .flow-steps{
   list-style:none;margin:0;padding:0;
   position:relative;
-  display:flex;
-  flex-direction:column;
-  flex:1;
-  justify-content:space-between; /* spreads steps to fill full card height */
-}
-.about-card .flow-steps::before{
-  content:"";
-  position:absolute;
-  left:21px;              /* centered under the 44px circle */
-  top:22px;                /* vertical center of the first circle */
-  bottom:22px;              /* vertical center of the last circle */
-  width:2px;
-  background:rgba(255,255,255,.25);
-  z-index:0;
 }
 .about-card .flow-steps li{
   display:flex;align-items:flex-start;gap:16px;
   position:relative;
-  z-index:1;
-  padding:0;
+  padding:0 0 24px;
 }
+.about-card .flow-steps li:last-child{padding-bottom:0;}
+.about-card .flow-steps li::after{
+  content:"";position:absolute;left:19px;top:40px;bottom:2px;width:2px;
+  background:rgba(255,255,255,.25);
+}
+.about-card .flow-steps li:last-child::after{display:none;}
 
 .about-card .flow-num{
   flex:none;
-  width:44px;height:44px;
+  width:40px;height:40px;
   border-radius:50%;
   background:var(--gold);color:var(--navy);
   display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:16px;font-family:'Inter',sans-serif;
+  font-weight:700;font-size:15px;font-family:'Inter',sans-serif;
   position:relative;z-index:1;
 }
 .about-card .flow-text{
-  padding-top:10px;
-  font-size:17px;line-height:1.5;
+  padding-top:8px;
+  font-size:16px;line-height:1.5;
   color:#D6DEF2;
 }
 
@@ -240,7 +229,6 @@
 .about-features .feat .ic{width:34px;height:34px;margin-bottom:14px;color:var(--royal);}
 .about-features .feat h4{font-size:15px;margin-bottom:6px;font-family:'Inter',sans-serif;color:var(--navy);}
 .about-features .feat p{font-size:13.5px;color:#5C6684;margin:0;}
-
   /* Quality */
   .quality{background:var(--mist);}
   .qual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px;}
