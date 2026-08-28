@@ -195,21 +195,28 @@
 
 .about-card .flow-steps{
   list-style:none;margin:0;padding:0;
+  position:relative;
   display:flex;
   flex-direction:column;
   flex:1;
   justify-content:space-between; /* spreads steps to fill full card height */
 }
+.about-card .flow-steps::before{
+  content:"";
+  position:absolute;
+  left:21px;              /* centered under the 44px circle */
+  top:22px;                /* vertical center of the first circle */
+  bottom:22px;              /* vertical center of the last circle */
+  width:2px;
+  background:rgba(255,255,255,.25);
+  z-index:0;
+}
 .about-card .flow-steps li{
   display:flex;align-items:flex-start;gap:16px;
   position:relative;
+  z-index:1;
   padding:0;
 }
-.about-card .flow-steps li::after{
-  content:"";position:absolute;left:21px;top:44px;bottom:-40px;width:2px;
-  background:rgba(255,255,255,.25);
-}
-.about-card .flow-steps li:last-child::after{display:none;}
 
 .about-card .flow-num{
   flex:none;
