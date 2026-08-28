@@ -183,13 +183,22 @@
 
   /* About */
   .about .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;}
-  .about-card{background:var(--navy);color:var(--white);padding:38px 34px;}
+  .about-card{
+  background:var(--navy);color:var(--white);
+  padding:44px 38px;
+  display:flex;
+  flex-direction:column;
+}
   .about-card .num{font-family:'Playfair Display',serif;font-size:44px;color:var(--gold);line-height:1;margin-bottom:6px;}
   .about-card .lbl{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#AFBBDD;margin-bottom:26px;display:block;}
-.about-card .flow-steps{list-style:none;margin:0;padding:0;}
+.about-card .flow-steps{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  justify-content:space-between; /* spreads steps to fill the full height */
+}
 .about-card .flow-steps li{
-  display:flex;align-items:flex-start;gap:16px;
-  position:relative;padding:0 0 32px;
+  padding:0; /* remove old fixed spacing, spacing now handled by flex */
 }
 .about-card .flow-steps li:last-child{padding-bottom:0;}
 .about-card .flow-steps li::after{
@@ -198,14 +207,13 @@
 }
 .about-card .flow-steps li:last-child::after{display:none;}
 .about-card .flow-num{
-  flex:none;width:32px;height:32px;border-radius:50%;
-  background:var(--gold);color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:13px;font-family:'Inter',sans-serif;
-  position:relative;z-index:1;
+  width:44px;height:44px;         /* bigger circle */
+  font-size:16px;
 }
 .about-card .flow-text{
-  padding-top:6px;font-size:14.5px;color:#D6DEF2;
+  font-size:17px;                  /* bigger, easier to read */
+  padding-top:10px;
+  line-height:1.5;
 }
   .about-body h2{font-size:30px;}
   .about-body p{color:#3E4762;font-size:16px;}
